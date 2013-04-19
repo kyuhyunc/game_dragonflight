@@ -1,9 +1,49 @@
 # Game Design Document
-This is a place holder for your game design document. You are advised to write your document in [Markdown](http://daringfireball.net/projects/markdown/) and the following section will show you how to write a document using Markdown markup.
 
-Alternativley, you can write your document in plain text if you wish.
+## Q1
+>You must tell us what 'things' you will have, how they will move (or not move). What they look like. Including the images in your document is an easy way to show us what they look like.
 
-----
+```
+**Things I will have**
+Main character: Dragon
+1. Obstacle1
+2. Obstacle2
+3. Obstacle3
+4. HP Portion
+5. Invisible Portion
+
+**How they will move**
+```
+Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
+Obstacle1, 2, and 3 will have different size, speed, and shape. They are going to be moved by using timer. 
+
+Obstacle1 : rock
+![alt text](./pics/obstacle1_rock "Obstacle1")
+Obstacle2 : arrow
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tell us how to play your game. Is it mouse, or keyboard? If mouse, what do you do with the mouse. If keyboard, what key commands are there and what do they do.
+Tell us how the score changes. Can it go down?
+Tell us how you keep track of a player¡¯s lives. When do they lose one? When do they die?
+Show us the layout of your user interface. Tell us about menus, buttons, actions, and any other user interface components, and what they do.
+You should include pictures of what your interface would look like
+A photo of hand-drawn rendering would suffice. It does not need to be computer generated.
 
 ## Markdown
 Markdown is a human-readable structured plain text format that is used to convert text into HTML. GitHub automatically renders Markdown into HTML.

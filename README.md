@@ -1,12 +1,12 @@
 # Game - Programming Assignments Private Repository
 ### Student Information
-  + Name: Tommy Trojan
-  + USC Email: ttrojan@usc.edu
-  + USC ID: 0123456789
+  + Name: Kyu Hyun Chang
+  + USC Email: kyuhyunc@usc.edu
+  + USC ID: 5668698400
 
 ### Game Information
-  + Game Name: myAwsomeGame
-  + Game Description: One sentence game description
+  + Game Name: Dragon Flight
+  + Game Description: Control flying dragon and avoid obstacles coming toward
   + [Game Design Doc](GameDesignDoc.md)
 
 
