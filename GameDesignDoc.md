@@ -1,24 +1,27 @@
 # Game Design Document
 
-## Q1
+## Question 1
 >You must tell us what 'things' you will have, how they will move (or not move). What they look like. Including the images in your document is an easy way to show us what they look like.
 
 ```
 **Things I will have**
 Main character: Dragon
-1. Obstacle1
-2. Obstacle2
-3. Obstacle3
-4. HP Portion
-5. Invisible Portion
+1. Obstacle1: rock
+![alt text](http://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg "Obstacle1")
+
+2. Obstacle2: arrow
+
+3. Obstacle3: fire ball
+
+4. HP Portion: red bottle portion
+
+5. Invisible Portion: white bottle portion
 
 **How they will move**
-```
 Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
 Obstacle1, 2, and 3 will have different size, speed, and shape. They are going to be moved by using timer. 
 
-Obstacle1 : rock
-![alt text](./pics/obstacle1_rock "Obstacle1")
+
 Obstacle2 : arrow
 
 ```
