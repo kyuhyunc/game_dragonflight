@@ -4,9 +4,14 @@
 >You must tell us what 'things' you will have, how they will move (or not move). What they look like. Including the images in your document is an easy way to show us what they look like.
 
 **Things I will have**
+
 0. Main character: Dragon
+
 1. Obstacle1: rock
+
 ![alt text](./pics/obstacle1_rock.jpg "Obstacle1_rock")
+
+<img src="./pics/obstacle1_rock.jpg" width="100" height="100" alt="Obstacle1_rock"/>
 
 2. Obstacle2: arrow
 ![alt text](./pics/obstacle2_arrow.jpg "Obstacle2_arrow")
