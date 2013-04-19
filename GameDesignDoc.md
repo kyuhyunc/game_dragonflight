@@ -41,6 +41,7 @@ The score will be calulated depending on time. The longer time dragon survives, 
 
 ## Question 4
 >Tell us how you keep track of a player¡¯s lives. When do they lose one? When do they die?
+
 There will be hearts, which indicate remaining lifes of dragon. Everytime the drgaon is hit by obstacle, life will go down. 
 However, when the dragon get a red bottle potion, which will come up randomly, life heart will go up again by one.
 Dragon will die when it looses every heart.
