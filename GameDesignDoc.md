@@ -3,16 +3,16 @@
 ## Question 1
 >You must tell us what 'things' you will have, how they will move (or not move). What they look like. Including the images in your document is an easy way to show us what they look like.
 
-**Things I will have**
+**Things I will have** \n
 0. Main character: Dragon
 1. Obstacle1: rock
-![alt text](http://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg "Obstacle1_rock")
+![alt text](./pics/obstacle1_rock.jpg "Obstacle1_rock") \n
 2. Obstacle2: arrow
-![alt text](http://loyalkng.com/wp-content/uploads/2009/06/cupids_arrow.jpg "Obstacle2_arrow")
+![alt text](http://loyalkng.com/wp-content/uploads/2009/06/cupids_arrow.jpg "Obstacle2_arrow") \n
 3. Obstacle3: fire ball
-![alt text](http://visionarywriter.files.wordpress.com/2009/11/ball-of-fire-cover.jpg "Obstacle2_fireball")
+![alt text](http://visionarywriter.files.wordpress.com/2009/11/ball-of-fire-cover.jpg "Obstacle2_fireball") \n
 4. Red bottle potion: HP potion
-![alt text](http://images.marapets.com/items/bottle_red.gif "red_potion")
+![alt text](http://images.marapets.com/items/bottle_red.gif "red_potion") 
 5. White bottle potion: invisible potion
 ![alt text](http://images.marapets.com/items/bottle_white.gif "white_potion")
 **How they will move**
