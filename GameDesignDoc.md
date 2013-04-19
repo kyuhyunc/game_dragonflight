@@ -30,6 +30,7 @@
 3. Obstacle3, which is a fire ball, will have the biggest size among all obstacles and will have moderate speed in the middle between a rock and an arrow. <br/>
 4. Red bottle potion, which is a HP potion, will recover dragon's HP. It will come up randomly. <br/>
 5. White bottle potion, which is an invisible potion, will make dragon invisible so that any obstacles cannot give a dammage to the dragon while it is invisible. <br/>
+6. Life, which indicates dragon's remaining life, will either decrease or increase depending on whether it get the potion or is hit by obstacle.
 
 ## Question 2
 >Tell us how to play your game. Is it mouse, or keyboard? If mouse, what do you do with the mouse. If keyboard, what key commands are there and what do they do.
