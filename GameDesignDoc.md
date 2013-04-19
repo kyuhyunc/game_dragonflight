@@ -59,8 +59,8 @@ First option will be `Start Game`, which will be executed by push `Enter` key.<b
 Second option will be `Instruction`. It will explain the game breifly; what kind of obstacles and potions there are, How score will be calculated, When the dragon will die.<br/>
 Thirde option will be `Show scores`. It wiil have all scores for previous games.<br/>
 
-Start screen
+**Start screen**
 <img src="./pics/start_screen.jpg" alt="start screen"/>
 
-Playing screen
+**Playing screen**
 <img src="./pics/playing_screen.jpg" alt="playing screen"/>
