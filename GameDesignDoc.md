@@ -55,7 +55,7 @@ Dragon will die when it looses every heart.
 
 ## Question 5
 >Show us the layout of your user interface. Tell us about menus, buttons, actions, and any other user interface components, and what they do.
->	-You should include pictures of what your interface would look like
+>	-You should include pictures of what your interface would look like 
 >	-A photo of hand-drawn rendering would suffice. It does not need to be computer generated.
 
 At the very first screen, there will be a name of the game, which is `Dragon Flight`, followed by several options.<br/>
