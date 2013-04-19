@@ -6,15 +6,20 @@
 **Things I will have** \n
 0. Main character: Dragon
 1. Obstacle1: rock
-![alt text](./pics/obstacle1_rock.jpg "Obstacle1_rock") \n
+![alt text](./pics/obstacle1_rock.jpg "Obstacle1_rock")
+
 2. Obstacle2: arrow
-![alt text](http://loyalkng.com/wp-content/uploads/2009/06/cupids_arrow.jpg "Obstacle2_arrow") \n
+![alt text](./pics/obstacle2_arrow.jpg "Obstacle2_arrow")
+
 3. Obstacle3: fire ball
-![alt text](http://visionarywriter.files.wordpress.com/2009/11/ball-of-fire-cover.jpg "Obstacle2_fireball") \n
+![alt text](./pics/obstacle3_fireball.jpg "Obstacle2_fireball")
+
 4. Red bottle potion: HP potion
-![alt text](http://images.marapets.com/items/bottle_red.gif "red_potion") 
+![alt text](./pics/red_potion.jpg "red_potion") 
+
 5. White bottle potion: invisible potion
-![alt text](http://images.marapets.com/items/bottle_white.gif "white_potion")
+![alt text](./pics/white_potion.jpg "white_potion")
+
 **How they will move**
 >Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
 >Obstacle1, 2, and 3 as well as red and whith bottle potions will have different size, speed, and shape. They are going to be moved by using timer. 
