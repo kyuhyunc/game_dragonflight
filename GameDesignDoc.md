@@ -7,23 +7,29 @@
 **Things I will have**
 Main character: Dragon
 1. Obstacle1: rock
-![alt text](http://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg "Obstacle1")
+[alt text](http://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg "Obstacle1_rock")
 
 2. Obstacle2: arrow
+[alt text](http://loyalkng.com/wp-content/uploads/2009/06/cupids_arrow.jpg "Obstacle2_arrow")
 
 3. Obstacle3: fire ball
+[alt text](http://visionarywriter.files.wordpress.com/2009/11/ball-of-fire-cover.jpg "Obstacle2_fireball")
 
-4. HP Portion: red bottle portion
+4. Red bottle potion: HP potion
+[alt text](http://images.marapets.com/items/bottle_red.gif "red_potion")
 
-5. Invisible Portion: white bottle portion
+5. White bottle potion: invisible potion
+[alt text](http://images.marapets.com/items/bottle_white.gif "white_potion")
 
 **How they will move**
 Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
 Obstacle1, 2, and 3 will have different size, speed, and shape. They are going to be moved by using timer. 
 
-
-Obstacle2 : arrow
-
+Obstacle1, which is a rock, will come up continuously and have a slow speed compared to the others
+Obstacle2, which is an arrow, will move faster than rocks, 
+Obstacle3, which is a fire ball, will have the biggest size among all obstacles and will have moderate speed in the middle between a rock and an arrow.
+Red bottle potion, which is a HP potion, will recover dragon's HP. It will come up randomly.
+White bottle potion, which is an invisible potion, will make dragon invisible so that any obstacles cannot give a dammage to the dragon while it is invisible.
 ```
 
 
