@@ -3,7 +3,7 @@
 ## Question 1
 >You must tell us what 'things' you will have, how they will move (or not move). What they look like. Including the images in your document is an easy way to show us what they look like.
 
-**Things I will have**
+**Things I will have & What they look like**
 
 0. Main character: Dragon
 
@@ -21,8 +21,11 @@
 <img src="./pics/heart.jpg" width="100" height="100" alt="heart"/>
 
 **How they will move**
->Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
->Obstacle1, 2, and 3 as well as red and whith bottle potions will have different size, speed, and shape. They are going to be moved by using timer. <br/>
+Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
+Obstacle1, 2, and 3 will have different size, speed, and shape. 
+Red and whith bottle potions will come up randomly and will move in straight with constant speed.
+However, hearts(lives) will not move, but will be fixed at the left top of the screen. 
+All of these are going to be moved by using timer. <br/>
 
 0. Main character, which is a dragon, will be controlled by arrow key on a keyboard. <br/>
 1. Obstacle1, which is a rock, will come up continuously and have a slow speed compared to the others. <br/>
@@ -35,7 +38,8 @@
 ## Question 2
 >Tell us how to play your game. Is it mouse, or keyboard? If mouse, what do you do with the mouse. If keyboard, what key commands are there and what do they do.
 
-User will use keyboard for playing the game. Basically, only arrow keys are required. However, I am thinking to add one more skill that dragon can you when MP is fulled.
+User will use keyboard for playing the game. Basically, only arrow keys are required. 
+However, I am thinking to add one special skil that dragon can use when MP is fulled.
 
 ## Question 3
 >Tell us how the score changes. Can it go down?
@@ -46,7 +50,7 @@ The score will be calulated depending on time. The longer time dragon survives, 
 >Tell us how you keep track of a player¡¯s lives. When do they lose one? When do they die?
 
 There will be hearts, which indicate remaining lifes of dragon. Everytime the drgaon is hit by obstacle, life will go down. 
-However, when the dragon get a red bottle potion, which will come up randomly, life heart will go up again by one.
+However, when the dragon get a red bottle potion, which will come up randomly, life heart will increase up by one.
 Dragon will die when it looses every heart.
 
 ## Question 5
