@@ -7,20 +7,20 @@
 
 0. Main character: Dragon
 
-1. Obstacle1: rock
+1. Obstacle1: rock<br/>
 <img src="./pics/obstacle1_rock.jpg" width="100" height="100" alt="Obstacle1_rock"/>
 
-2. Obstacle2: arrow
+2. Obstacle2: arrow<br/>
 <img src="./pics/obstacle2_arrow.jpg" width="100" height="100" alt="Obstacle2_arrow"/>
 
-3. Obstacle3: fire ball
+3. Obstacle3: fire ball<br/>
 <img src="./pics/obstacle3_fireball.jpg" width="100" height="100" alt="Obstacle2_fireball"/>
 
-4. Red bottle potion: HP potion
-<img src="./pics/red_potion.jpg" width="100" height="100" alt="red_potion"/>
+4. Red bottle potion: HP potion<br/>
+<img src="./pics/red_potion" width="100" height="100" alt="red_potion"/>
 
-5. White bottle potion: invisible potion
-<img src="./pics/white_potion.jpg" width="100" height="100" alt="white_potion"/>
+5. White bottle potion: invisible potion<br/>
+<img src="./pics/white_potion" width="100" height="100" alt="white_potion"/>
 
 **How they will move**
 >Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
