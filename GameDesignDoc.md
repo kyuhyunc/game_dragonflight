@@ -54,7 +54,13 @@ Dragon will die when it looses every heart.
 >	-You should include pictures of what your interface would look like
 >	-A photo of hand-drawn rendering would suffice. It does not need to be computer generated.
 
-At the very first screen, there will be a name of the game, which is `Dragon Flight`, followed by the options.
-First option will be `Start Game`, which will be executed by push `Enter` key.
-Second option will be `Instruction`. It will explain the game breifly; what kind of obstacles and potions there are, How score will be calculated, When the dragon will die.
-Thirde option will be `Show scores`. It wiil have all scores for previous games.
+At the very first screen, there will be a name of the game, which is `Dragon Flight`, followed by the options.<br/>
+First option will be `Start Game`, which will be executed by push `Enter` key.<br/>
+Second option will be `Instruction`. It will explain the game breifly; what kind of obstacles and potions there are, How score will be calculated, When the dragon will die.<br/>
+Thirde option will be `Show scores`. It wiil have all scores for previous games.<br/>
+
+Start screen
+<img src="./pics/start_screen.jpg" alt="start screen"/>
+
+Playing screen
+<img src="./pics/playing_screen.jpg" alt="playing screen"/>
