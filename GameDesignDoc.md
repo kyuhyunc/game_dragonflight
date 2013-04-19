@@ -14,9 +14,9 @@
 3. Obstacle3: fire ball<br/>
 <img src="./pics/obstacle3_fireball.jpg" width="100" height="100" alt="Obstacle2_fireball"/>
 4. Red bottle potion: HP potion<br/>
-<img src="./pics/red_potion.png" width="100" height="100" alt="red_potion"/>
+<img src="./pics/red_potion.jpg" width="100" height="100" alt="red_potion"/>
 5. White bottle potion: invisible potion<br/>
-<img src="./pics/white_potion.png" width="100" height="100" alt="white_potion"/>
+<img src="./pics/white_potion.jpg" width="100" height="100" alt="white_potion"/>
 
 **How they will move**
 >Basicaly, dragon will be controlled by keyboard input; everytime user push arrow keyboards, dragon will move little bit to entered direction.
