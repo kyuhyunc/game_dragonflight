@@ -44,24 +44,35 @@ class MainWindow : public QWidget {
     
 public:
 	/**  Default constructor  \n
-	 *	QWidget, window, will be the biggest screen that will save Gridlayout. \n
-	 *  This Gridlayout contains all top layout, heuristic layout, solution layout, QGraphicscene etc.
+	 *	QWidget, which is window, will be the biggest screen that will save layouts and scene. \n
+	 *  layouts will have every button, textbox, LCD for score and level etc.
 	 */
 	explicit MainWindow();
 	/**  Default destructor */
 	~MainWindow();
 
 	/** Create the top layout that will be contained in Gridlayout 
-	 * 	@return QHBoxLayout that has boxes for input
+	 * 	@return QHBoxLayout that has username box and score LCD
 	 */
 	QHBoxLayout *createTopLayout();
+	
+	/** Create the right layout that will be contained in Gridlayout 
+	 * 	@return QVBoxLayout that has start, pause, quit buttons and game level LCD
+	 */
 	QVBoxLayout *createRightLayout();
 
+	/** Stop all timers */
 	void allTimerStop();
+
+	/** Delete all timers and save NULL as an address*/
 	void allTimerDelete();
 
+	/** Will display the window*/
 	void show();
-
+	
+	/** Creat potions depending on the type number that will be generated randomly
+	 *	@param type type of potion, either red or white
+	 */
 	void obs_potions(int type);
     
 private:
@@ -113,12 +124,19 @@ private:
 protected:
 
 public slots:
+	/** Start the game by starting timers and creating a dragon etc */
 	void startGame();
+	/** Pause or resume the game by stoping or starting timers */
 	void PRGame();
+	/** Count score everytime the main timer times out */
 	void cntScore();
+	/** Creat rock obstacle everytime timer1 times out */
 	void obs_rock();
+	/** Creat arrow obstacle everytime timer2 times out */
 	void obs_arrow();
+	/** Creat fireball obstacle everytime timer3 times out */
 	void obs_fireball();
+	/** Cast magic if a dragon has white potion left */
 	void useMagic();
 };
 

@@ -1,0 +1,187 @@
+\hypertarget{classDragon}{\section{\-Dragon \-Class \-Reference}
+\label{classDragon}\index{\-Dragon@{\-Dragon}}
+}
+
+
+{\ttfamily \#include $<$dragon.\-h$>$}
+
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDragon_a3671c185209a680de8f7fd75fdff02cb}{void {\bfseries my\-Press\-Signal} ()}\label{classDragon_a3671c185209a680de8f7fd75fdff02cb}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDragon_a90a16818942945b821127173aedeeffa}{\-Dragon} (\-Q\-Label $\ast$n\-Dragon, double nx, double ny, double w, double h)
+\item 
+\hyperlink{classDragon_ae34521402d155aae936b65afbee22cf5}{$\sim$\-Dragon} ()
+\item 
+void \hyperlink{classDragon_a3aa3319b385228dab7840f5a8d22d1ec}{set\-X} (int nx)
+\item 
+void \hyperlink{classDragon_ac0093bcb3ff6ada080ae555bdc2339e4}{set\-Y} (int ny)
+\item 
+int \hyperlink{classDragon_a65e27a25444f3cf41c398f966c98600c}{get\-X} ()
+\item 
+int \hyperlink{classDragon_a7813dbdf80360c341aadf912e966c7c4}{get\-Y} ()
+\item 
+double \hyperlink{classDragon_ac873a3aaa09f50699c0705a720e89a09}{get\-Size} ()
+\item 
+void \hyperlink{classDragon_a3127fa55e4cc115ecd008655a7c07471}{move} (int window\-Max\-X, int window\-Max\-Y)
+\item 
+void \hyperlink{classDragon_a7a65aca84bed48dee9ecd1808851e7b2}{key\-Reset} ()
+\item 
+void \hyperlink{classDragon_ae2aa4a9df7918b277fff80398f84486a}{magic\-Potion} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDragon_ad42c3caca52e0e086a9bb5e3daa038ab}{key\-Press\-Event} (\-Q\-Key\-Event $\ast$event)
+\item 
+void \hyperlink{classDragon_ae901577cb91d48fdb5e21c0680d3fbcb}{key\-Release\-Event} (\-Q\-Key\-Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This class maintains the location, size, and speed of a dragon 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classDragon_a90a16818942945b821127173aedeeffa}{\index{\-Dragon@{\-Dragon}!\-Dragon@{\-Dragon}}
+\index{\-Dragon@{\-Dragon}!Dragon@{\-Dragon}}
+\subsubsection[{\-Dragon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dragon\-::\-Dragon} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Label $\ast$}]{n\-Dragon, }
+\item[{double}]{nx, }
+\item[{double}]{ny, }
+\item[{double}]{w, }
+\item[{double}]{h}
+\end{DoxyParamCaption}
+)}}\label{classDragon_a90a16818942945b821127173aedeeffa}
+\-Default constructor 
+\begin{DoxyParams}{\-Parameters}
+{\em n\-Dragon} & \-Q\-Label that has pixmap data of dragon \\
+\hline
+{\em nx} & left top location of the tile(x-\/location) \\
+\hline
+{\em ny} & left top location of the tile(y-\/location) \\
+\hline
+{\em w} & width of the tile \\
+\hline
+{\em h} & height of the tile \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDragon_ae34521402d155aae936b65afbee22cf5}{\index{\-Dragon@{\-Dragon}!$\sim$\-Dragon@{$\sim$\-Dragon}}
+\index{$\sim$\-Dragon@{$\sim$\-Dragon}!Dragon@{\-Dragon}}
+\subsubsection[{$\sim$\-Dragon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dragon\-::$\sim$\-Dragon} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDragon_ae34521402d155aae936b65afbee22cf5}
+\-Default destructor 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classDragon_ac873a3aaa09f50699c0705a720e89a09}{\index{\-Dragon@{\-Dragon}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!Dragon@{\-Dragon}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Dragon\-::get\-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDragon_ac873a3aaa09f50699c0705a720e89a09}
+\-Get size(either width or height) of a dragon \begin{DoxyReturn}{\-Returns}
+size(either width or height) 
+\end{DoxyReturn}
+\hypertarget{classDragon_a65e27a25444f3cf41c398f966c98600c}{\index{\-Dragon@{\-Dragon}!get\-X@{get\-X}}
+\index{get\-X@{get\-X}!Dragon@{\-Dragon}}
+\subsubsection[{get\-X}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Dragon\-::get\-X} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDragon_a65e27a25444f3cf41c398f966c98600c}
+\-Get x-\/location \begin{DoxyReturn}{\-Returns}
+x-\/location 
+\end{DoxyReturn}
+\hypertarget{classDragon_a7813dbdf80360c341aadf912e966c7c4}{\index{\-Dragon@{\-Dragon}!get\-Y@{get\-Y}}
+\index{get\-Y@{get\-Y}!Dragon@{\-Dragon}}
+\subsubsection[{get\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Dragon\-::get\-Y} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDragon_a7813dbdf80360c341aadf912e966c7c4}
+\-Get y-\/location \begin{DoxyReturn}{\-Returns}
+y-\/location 
+\end{DoxyReturn}
+\hypertarget{classDragon_ad42c3caca52e0e086a9bb5e3daa038ab}{\index{\-Dragon@{\-Dragon}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!Dragon@{\-Dragon}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::key\-Press\-Event} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classDragon_ad42c3caca52e0e086a9bb5e3daa038ab}
+\-Inherited function for key press event \hypertarget{classDragon_ae901577cb91d48fdb5e21c0680d3fbcb}{\index{\-Dragon@{\-Dragon}!key\-Release\-Event@{key\-Release\-Event}}
+\index{key\-Release\-Event@{key\-Release\-Event}!Dragon@{\-Dragon}}
+\subsubsection[{key\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::key\-Release\-Event} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classDragon_ae901577cb91d48fdb5e21c0680d3fbcb}
+\-Inherited function for key release event \hypertarget{classDragon_a7a65aca84bed48dee9ecd1808851e7b2}{\index{\-Dragon@{\-Dragon}!key\-Reset@{key\-Reset}}
+\index{key\-Reset@{key\-Reset}!Dragon@{\-Dragon}}
+\subsubsection[{key\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::key\-Reset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDragon_a7a65aca84bed48dee9ecd1808851e7b2}
+reset the keyvalue that will make a dragon stop \hypertarget{classDragon_ae2aa4a9df7918b277fff80398f84486a}{\index{\-Dragon@{\-Dragon}!magic\-Potion@{magic\-Potion}}
+\index{magic\-Potion@{magic\-Potion}!Dragon@{\-Dragon}}
+\subsubsection[{magic\-Potion}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::magic\-Potion} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDragon_ae2aa4a9df7918b277fff80398f84486a}
+function that will emit signal when space is pressed \hypertarget{classDragon_a3127fa55e4cc115ecd008655a7c07471}{\index{\-Dragon@{\-Dragon}!move@{move}}
+\index{move@{move}!Dragon@{\-Dragon}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::move} (
+\begin{DoxyParamCaption}
+\item[{int}]{window\-Max\-X, }
+\item[{int}]{window\-Max\-Y}
+\end{DoxyParamCaption}
+)}}\label{classDragon_a3127fa55e4cc115ecd008655a7c07471}
+\-Move the tile in proper direction 
+\begin{DoxyParams}{\-Parameters}
+{\em window\-Max\-X} & width of window \\
+\hline
+{\em window\-Max\-Y} & height of window \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDragon_a3aa3319b385228dab7840f5a8d22d1ec}{\index{\-Dragon@{\-Dragon}!set\-X@{set\-X}}
+\index{set\-X@{set\-X}!Dragon@{\-Dragon}}
+\subsubsection[{set\-X}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::set\-X} (
+\begin{DoxyParamCaption}
+\item[{int}]{nx}
+\end{DoxyParamCaption}
+)}}\label{classDragon_a3aa3319b385228dab7840f5a8d22d1ec}
+\-Set x-\/location 
+\begin{DoxyParams}{\-Parameters}
+{\em nx} & x location of left top of the tile \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDragon_ac0093bcb3ff6ada080ae555bdc2339e4}{\index{\-Dragon@{\-Dragon}!set\-Y@{set\-Y}}
+\index{set\-Y@{set\-Y}!Dragon@{\-Dragon}}
+\subsubsection[{set\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dragon\-::set\-Y} (
+\begin{DoxyParamCaption}
+\item[{int}]{ny}
+\end{DoxyParamCaption}
+)}}\label{classDragon_ac0093bcb3ff6ada080ae555bdc2339e4}
+\-Set y-\/location 
+\begin{DoxyParams}{\-Parameters}
+{\em ny} & y location of left top of the tile \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dragon.\-h\item 
+dragon.\-cpp\item 
+moc\-\_\-dragon.\-cpp\end{DoxyCompactItemize}

@@ -77,7 +77,7 @@ int Obstacle::hitCheck()
 	double dx = dragon->getX();
 	double dy = dragon->getY();
 	int dsize = dragon->getSize();
-	int buffer = 32;
+	int buffer = 34;
 
 	if( x + width > dx + buffer  && x + buffer < dx + dsize){
 		if( y + height > dy + buffer && y + buffer < dy + dsize){

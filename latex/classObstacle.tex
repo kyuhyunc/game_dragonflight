@@ -1,0 +1,207 @@
+\hypertarget{classObstacle}{\section{\-Obstacle \-Class \-Reference}
+\label{classObstacle}\index{\-Obstacle@{\-Obstacle}}
+}
+
+
+{\ttfamily \#include $<$obstacle.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObstacle_acdb7e6ba75239ea96d88cf7f33b3ef03}{\-Obstacle} (\-Q\-Label $\ast$n\-Obstacle, double nx, double ny, double w, double h, int vx, int vy, \hyperlink{classDragon}{\-Dragon} $\ast$d)
+\item 
+\hyperlink{classObstacle_af2f9cc9c6cff75dca0974fd5ac4f71a9}{$\sim$\-Obstacle} ()
+\item 
+void \hyperlink{classObstacle_a85b2b36f6b44e6e8d7efd82b7187f6b1}{set\-X} (int nx)
+\item 
+void \hyperlink{classObstacle_a81208a9ba42ebd71a820bc3e501e17ff}{set\-Y} (int ny)
+\item 
+void \hyperlink{classObstacle_a98cfcddb6bfe6ed8776c8f4a156dba50}{set\-Velocity\-X} (int vx)
+\item 
+void \hyperlink{classObstacle_a26509e4052a4031d4a66f8c052b33180}{set\-Velocity\-Y} (int vy)
+\item 
+int \hyperlink{classObstacle_a5ea4b68aa9ce866b74ef4a3e0374da25}{get\-X} ()
+\item 
+int \hyperlink{classObstacle_aff69e24229b9cf01011d5cb29fe2d532}{get\-Y} ()
+\item 
+int \hyperlink{classObstacle_aa6a4321df2bb9f6ca80f7a0e14e54b31}{get\-Velocity\-X} ()
+\item 
+int \hyperlink{classObstacle_ac4c638678eb4a168543a98d2fc83ee31}{get\-Velocity\-Y} ()
+\item 
+int \hyperlink{classObstacle_afad6e7c04bcfc69909e3ba0875662fa9}{move} (int window\-Max\-X, int window\-Max\-Y)
+\item 
+int \hyperlink{classObstacle_a6e5a041c22edafd47b549f85a08c801b}{hit\-Check} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This class maintains the location, size, and speed of one obstacle. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classObstacle_acdb7e6ba75239ea96d88cf7f33b3ef03}{\index{\-Obstacle@{\-Obstacle}!\-Obstacle@{\-Obstacle}}
+\index{\-Obstacle@{\-Obstacle}!Obstacle@{\-Obstacle}}
+\subsubsection[{\-Obstacle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Obstacle\-::\-Obstacle} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Label $\ast$}]{n\-Obstacle, }
+\item[{double}]{nx, }
+\item[{double}]{ny, }
+\item[{double}]{w, }
+\item[{double}]{h, }
+\item[{int}]{vx, }
+\item[{int}]{vy, }
+\item[{{\bf \-Dragon} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_acdb7e6ba75239ea96d88cf7f33b3ef03}
+\-Default constructor 
+\begin{DoxyParams}{\-Parameters}
+{\em n\-Obstacle} & \-Q\-Label that has pixmap data of obstacle \\
+\hline
+{\em nx} & left top location of the tile(x-\/location) \\
+\hline
+{\em ny} & left top location of the tile(y-\/location) \\
+\hline
+{\em w} & width of the tile \\
+\hline
+{\em h} & height of the tile \\
+\hline
+{\em vx} & x speed \\
+\hline
+{\em vy} & y speed \\
+\hline
+{\em d} & copy of dragon in order to check if an obstacle hits a dragon \\
+\hline
+\end{DoxyParams}
+\hypertarget{classObstacle_af2f9cc9c6cff75dca0974fd5ac4f71a9}{\index{\-Obstacle@{\-Obstacle}!$\sim$\-Obstacle@{$\sim$\-Obstacle}}
+\index{$\sim$\-Obstacle@{$\sim$\-Obstacle}!Obstacle@{\-Obstacle}}
+\subsubsection[{$\sim$\-Obstacle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Obstacle\-::$\sim$\-Obstacle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_af2f9cc9c6cff75dca0974fd5ac4f71a9}
+\-Default destructor 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classObstacle_aa6a4321df2bb9f6ca80f7a0e14e54b31}{\index{\-Obstacle@{\-Obstacle}!get\-Velocity\-X@{get\-Velocity\-X}}
+\index{get\-Velocity\-X@{get\-Velocity\-X}!Obstacle@{\-Obstacle}}
+\subsubsection[{get\-Velocity\-X}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Obstacle\-::get\-Velocity\-X} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_aa6a4321df2bb9f6ca80f7a0e14e54b31}
+\-Get x-\/velocity \begin{DoxyReturn}{\-Returns}
+x-\/velocity 
+\end{DoxyReturn}
+\hypertarget{classObstacle_ac4c638678eb4a168543a98d2fc83ee31}{\index{\-Obstacle@{\-Obstacle}!get\-Velocity\-Y@{get\-Velocity\-Y}}
+\index{get\-Velocity\-Y@{get\-Velocity\-Y}!Obstacle@{\-Obstacle}}
+\subsubsection[{get\-Velocity\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Obstacle\-::get\-Velocity\-Y} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_ac4c638678eb4a168543a98d2fc83ee31}
+\-Get y-\/velocity \begin{DoxyReturn}{\-Returns}
+y-\/velocity 
+\end{DoxyReturn}
+\hypertarget{classObstacle_a5ea4b68aa9ce866b74ef4a3e0374da25}{\index{\-Obstacle@{\-Obstacle}!get\-X@{get\-X}}
+\index{get\-X@{get\-X}!Obstacle@{\-Obstacle}}
+\subsubsection[{get\-X}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Obstacle\-::get\-X} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_a5ea4b68aa9ce866b74ef4a3e0374da25}
+\-Get x-\/location \begin{DoxyReturn}{\-Returns}
+x-\/location 
+\end{DoxyReturn}
+\hypertarget{classObstacle_aff69e24229b9cf01011d5cb29fe2d532}{\index{\-Obstacle@{\-Obstacle}!get\-Y@{get\-Y}}
+\index{get\-Y@{get\-Y}!Obstacle@{\-Obstacle}}
+\subsubsection[{get\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Obstacle\-::get\-Y} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_aff69e24229b9cf01011d5cb29fe2d532}
+\-Get y-\/location \begin{DoxyReturn}{\-Returns}
+y-\/location 
+\end{DoxyReturn}
+\hypertarget{classObstacle_a6e5a041c22edafd47b549f85a08c801b}{\index{\-Obstacle@{\-Obstacle}!hit\-Check@{hit\-Check}}
+\index{hit\-Check@{hit\-Check}!Obstacle@{\-Obstacle}}
+\subsubsection[{hit\-Check}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Obstacle\-::hit\-Check} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_a6e5a041c22edafd47b549f85a08c801b}
+hit\-Check function which will be called everytime moving is done it will compare with the dragon's location and an obstacle's location \begin{DoxyReturn}{\-Returns}
+return the result of move about its status \par
+ (return 0\-: no hit return 1\-: obstacle hit a dragon return 2\-: red potion hit a dragon return 3\-: white potion hit a dragon) 
+\end{DoxyReturn}
+\hypertarget{classObstacle_afad6e7c04bcfc69909e3ba0875662fa9}{\index{\-Obstacle@{\-Obstacle}!move@{move}}
+\index{move@{move}!Obstacle@{\-Obstacle}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Obstacle\-::move} (
+\begin{DoxyParamCaption}
+\item[{int}]{window\-Max\-X, }
+\item[{int}]{window\-Max\-Y}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_afad6e7c04bcfc69909e3ba0875662fa9}
+\-Move the tile in proper direction 
+\begin{DoxyParams}{\-Parameters}
+{\em window\-Max\-X} & width of window \\
+\hline
+{\em window\-Max\-Y} & height of window \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+return the result of move about its status\par
+ (return 0\-: obstacle meets wall return 1\-: obstacle hit a dragon return 2\-: red potion hit a dragon return 3\-: white potion hit a dragon) 
+\end{DoxyReturn}
+\hypertarget{classObstacle_a98cfcddb6bfe6ed8776c8f4a156dba50}{\index{\-Obstacle@{\-Obstacle}!set\-Velocity\-X@{set\-Velocity\-X}}
+\index{set\-Velocity\-X@{set\-Velocity\-X}!Obstacle@{\-Obstacle}}
+\subsubsection[{set\-Velocity\-X}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Obstacle\-::set\-Velocity\-X} (
+\begin{DoxyParamCaption}
+\item[{int}]{vx}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_a98cfcddb6bfe6ed8776c8f4a156dba50}
+\-Set x-\/velocity 
+\begin{DoxyParams}{\-Parameters}
+{\em vx} & new x velocity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classObstacle_a26509e4052a4031d4a66f8c052b33180}{\index{\-Obstacle@{\-Obstacle}!set\-Velocity\-Y@{set\-Velocity\-Y}}
+\index{set\-Velocity\-Y@{set\-Velocity\-Y}!Obstacle@{\-Obstacle}}
+\subsubsection[{set\-Velocity\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Obstacle\-::set\-Velocity\-Y} (
+\begin{DoxyParamCaption}
+\item[{int}]{vy}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_a26509e4052a4031d4a66f8c052b33180}
+\-Set y-\/velocity 
+\begin{DoxyParams}{\-Parameters}
+{\em vy} & new y velocity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classObstacle_a85b2b36f6b44e6e8d7efd82b7187f6b1}{\index{\-Obstacle@{\-Obstacle}!set\-X@{set\-X}}
+\index{set\-X@{set\-X}!Obstacle@{\-Obstacle}}
+\subsubsection[{set\-X}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Obstacle\-::set\-X} (
+\begin{DoxyParamCaption}
+\item[{int}]{nx}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_a85b2b36f6b44e6e8d7efd82b7187f6b1}
+\-Set x-\/location 
+\begin{DoxyParams}{\-Parameters}
+{\em nx} & x location of left top of the tile \\
+\hline
+\end{DoxyParams}
+\hypertarget{classObstacle_a81208a9ba42ebd71a820bc3e501e17ff}{\index{\-Obstacle@{\-Obstacle}!set\-Y@{set\-Y}}
+\index{set\-Y@{set\-Y}!Obstacle@{\-Obstacle}}
+\subsubsection[{set\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Obstacle\-::set\-Y} (
+\begin{DoxyParamCaption}
+\item[{int}]{ny}
+\end{DoxyParamCaption}
+)}}\label{classObstacle_a81208a9ba42ebd71a820bc3e501e17ff}
+\-Set y-\/location 
+\begin{DoxyParams}{\-Parameters}
+{\em ny} & y location of left top of the tile \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+obstacle.\-h\item 
+obstacle.\-cpp\end{DoxyCompactItemize}

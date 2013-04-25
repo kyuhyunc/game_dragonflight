@@ -295,23 +295,24 @@ void MainWindow::cntScore()
 		timer1->setInterval(450);
 		timer2->setInterval(1800);
 		timer3->setInterval(2800);
-		errMsg->setPlainText("Lv4: They are coming faster");
+		errMsg->setPlainText("Lv4: More obstacles are coming1");
 		gameLevel = 4;
 	}
 	if(scoreNum == 2000){	
-		timer1->setInterval(400);
-		timer2->setInterval(1600);
-		timer3->setInterval(2600);
-		errMsg->setPlainText("Lv5: Raining obstacles");
+		timer1->setInterval(380);
+		timer2->setInterval(1500);
+		timer3->setInterval(2500);
+		errMsg->setPlainText("Lv5: More obstacles are coming2");
 		gameLevel = 5;
 	}
 	if(scoreNum == 2500){	
-		timer1->setInterval(350);
-		timer2->setInterval(1400);
-		timer3->setInterval(2400);
-		errMsg->setPlainText("Lv6: Hell");
+		timer1->setInterval(250);
+		timer2->setInterval(1300);
+		timer3->setInterval(2300);
+		errMsg->setPlainText("Lv6: Faster speed");
 		gameLevel = 6;
 	}
+
 	QgameLevel->display(gameLevel);
 
 	srand(scoreNum);
@@ -499,6 +500,10 @@ void MainWindow::obs_rock()
 	int vx = 1+rand()%1;
 	int vy = 1+rand()%1;
 
+	if(gameLevel == 6){
+		vx++; vy++;
+	}
+
 	int temp;
 	int direction = rand() % 4;
 	int direction2 = rand() % 2;
@@ -572,6 +577,10 @@ void MainWindow::obs_arrow()
 	int height = 30;
 	int vx = 2+rand()%3;
 	int vy = 2+rand()%3;
+
+	if(gameLevel == 6){
+		vx++; vy++;
+	}
 
 	int temp;
 	int direction = rand() % 4;
@@ -668,6 +677,10 @@ void MainWindow::obs_fireball()
 	int size = 110;
 	int vx = 2+rand()%2;
 	int vy = 2+rand()%2;
+	
+	if(gameLevel == 6){
+		vx++; vy++;
+	}
 
 	int temp;
 	int direction = rand() % 4;

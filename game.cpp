@@ -3,7 +3,7 @@
 	
 	/** @mainpage CSCI 102 Homework #5
 	 *  @section purpose Purpose/Overview
-	 *	  PA5 make my own game with using qt - GUI implementation assignment
+	 *	  PA5 make my own game with using qt
 	 */
 
 int main(int argc, char *argv[])
