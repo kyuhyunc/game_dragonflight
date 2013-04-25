@@ -25,5 +25,6 @@ doxygen config.txt
 (the name of output file can be differ by the name of directory)
 ```
 
-### Screenshots -- [Optional]
-You can either remove this section or add screenshots if you wish.
+### Screenshots
+**Playing screen**
+<img src="./pics/playing_screen.png" alt="playing screen"/>
