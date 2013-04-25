@@ -70,6 +70,11 @@ Dragon will die when it looses every heart.
 6. `Error/message` box: will display any information that might be wrong or changed etc
 7. `Game` level: will show current level of the game.
 
+At the very first screen, there will be a name of the game, which is `Dragon Flight`, followed by several options.<br/>
+First option will be `Start Game`, which will be executed by push `Enter` key.<br/>
+Second option will be `Instruction`. It will explain the game breifly; what kind of obstacles and potions there are, How score will be calculated, When the dragon will die.<br/>
+Thirde option will be `Show scores`. It wiil have all scores for previous games.<br/>
+
 **Initial screen**
 <img src="./pics/initial_screen.png" alt="initial screen"/>
 

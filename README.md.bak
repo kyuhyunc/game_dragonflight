@@ -14,15 +14,11 @@
 The grader should use the following procedure to compile and run the code:
 ```shell
 #Compile Instructions
-qmake -project
-qmake
-make
+echo "Write command here"
 #Doxygen Instructions
-doxygen -g config.txt
-doxygen config.txt
+echo "Write command here"
 #Command to run
-./game_kyuhyunc
-(the name of output file can be differ by the name of directory)
+echo "Write command here"
 ```
 
 ### Screenshots -- [Optional]

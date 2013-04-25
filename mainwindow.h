@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QApplication>
+#include <QApplication>
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -9,6 +10,7 @@
 #include <QPushButton>
 #include <QWidget>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QList>
 #include <QLabel>
 #include <QGraphicsItem>
@@ -16,6 +18,8 @@
 #include <QObject>
 #include <QLCDNumber>
 #include <QPixmap>
+#include <QTextEdit>
+#include <QLineEdit>
 
 #include <stdlib.h>
 #include <iostream>
@@ -25,6 +29,10 @@
 #include <map>
 #include <set>
 #include <cmath>
+#include <ctime>
+
+#include "obstacle.h"
+#include "dragon.h"
 
 #define WINDOW_MAX_X 250
 #define WINDOW_MAX_Y 250
@@ -47,8 +55,14 @@ public:
 	 * 	@return QHBoxLayout that has boxes for input
 	 */
 	QHBoxLayout *createTopLayout();
+	QVBoxLayout *createRightLayout();
+
+	void allTimerStop();
+	void allTimerDelete();
 
 	void show();
+
+	void obs_potions(int type);
     
 private:
     QGraphicsScene *scene;
@@ -60,6 +74,7 @@ private:
 	// layouts
 	QGridLayout *layout; // main layout    
     QHBoxLayout *topLayout; // top input text board layout
+    QVBoxLayout *rightLayout; // top input text board layout
     
 	// buttons
 	QPushButton *reStart;	
@@ -68,22 +83,35 @@ private:
 	
 	// text boxes
 	QLCDNumber *score;
-	
-	// labels for topLayout 
-	QLabel *scoreLabel;
-
-	// vector for saving obstacles
-	QVector<QLabel*> obstacles;
-
+	QLCDNumber *QgameLevel;
+	int gameLevel;
 	double scoreNum; // for score
+	QTextEdit *errMsg; // get error message
+	QLabel *instruction1;
+	QLabel *instruction2;
+	QLineEdit *usrName;
+
+	// labels for layouts
+	QLabel *scoreLabel;
+	QLabel *usrNameLabel;
+	QLabel *gameLevelLabel;
+	
+	// vector for saving obstacles
+	QVector<Obstacle*> obstacles;
+	QVector<QLabel*> Qhearts;
+	int num_hearts;
+	QVector<QLabel*> magic_potions;
+	Dragon *dragon;
+
 	QTimer *mainTimer; // main timer
 	QTimer *timer1; // for rock
 	QTimer *timer2; // for arrow
 	QTimer *timer3; // for fireball
-	QTimer *timer4; // for red potion
-	QTimer *timer5; // for white potion
-
+	//QTimer *timer4; // for red potion
+	//QTimer *timer5; // for white potion
 		 
+protected:
+
 public slots:
 	void startGame();
 	void PRGame();
@@ -91,6 +119,7 @@ public slots:
 	void obs_rock();
 	void obs_arrow();
 	void obs_fireball();
+	void useMagic();
 };
 
 #endif // MAINWINDOW_H
