@@ -62,13 +62,14 @@ Dragon will die when it looses every heart.
 >	-You should include pictures of what your interface would look like 
 >	-A photo of hand-drawn rendering would suffice. It does not need to be computer generated.
 
-1. `User name` box: here is where user will enter a name of user.
-2. `Score` box: here is where user can see his/her score.
-3. `Start` button: pushing this botton will start the game
-4. `Pause/Resume` botton: pushing this botton will be going to either pause or resume the game.
-5. `Quit` button: will execute the program.
-6. `Error/message` box: will display any information that might be wrong or changed etc
-7. `Game` level: will show current level of the game.
+1. `User name` box: here is where user will enter a name of user. <br/>
+2. `Score` box: here is where user can see his/her score. <br/>
+3. `Start` button: pushing this botton will start the game <br/>
+4. `Pause/Resume` botton: pushing this botton will be going to either pause or resume the game. <br/>
+5. `Quit` button: will execute the program. <br/>
+6. `Error/message` box: will display any information that might be wrong or changed etc <br/>
+7. `Game` level: will show current level of the game. <br/>
+8. `Instruction` box: will show brief instruction for playing the game. <br/>
 
 **Initial screen**
 <img src="./pics/initial_screen.png" alt="initial screen"/>
