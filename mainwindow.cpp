@@ -54,6 +54,13 @@ MainWindow::MainWindow()  {
 	connect(exitGame, SIGNAL(clicked()), qApp, SLOT(quit()));	
 
 	//setFocusPolicy(Qt::StrongFocus);
+
+	scoreFile.setFileName("score.txt");
+	if(!scoreFile.open(QIODevice::ReadWrite | QIODevice::Text))
+		std::cout << "Error occurs during reading score file" << std::endl;
+
+	scoreDisplay();
+
 }
 
 QHBoxLayout *MainWindow::createTopLayout()
@@ -89,6 +96,8 @@ QVBoxLayout *MainWindow::createRightLayout()
 	pause_resumeGame = new QPushButton("Pause/Resume");
 	exitGame = new QPushButton("Quit");	
 	//QLabel *blank = new QLabel(tr(" "));
+	scoreListLabel = new QLabel(tr("High scores"));
+	scoreList = new QTableView;
 	instruction1 = new QLabel;
 	instruction2 = new QLabel;
 	QgameLevel = new QLCDNumber(2);
@@ -98,12 +107,20 @@ QVBoxLayout *MainWindow::createRightLayout()
 	reStart->setMaximumWidth(150);
 	pause_resumeGame->setMaximumWidth(150);
 	exitGame->setMaximumWidth(150);
-
-	instruction1->setFixedSize(150,300);
+	scoreList->setMaximumWidth(150);
+	scoreList->setMaximumHeight(276);
+	/*scoreList->resizeRowsToContents(); // Adjust the row height
+	scoreList->resizeColumnsToContents();
+	scoreList->setColumnWidth(0,60);
+	scoreList->setColumnWidth(1,60);*/
+	scoreList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	scoreList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	scoreList->setDisabled(1);
+//	scoreList->verticalHeader()->hide();
+	
 	instruction2->setText(tr("Arrow key: moving\nSpace: cast magic\n\nRed potion: +1 heart\nWhite potion: magic"));
 
-//	instruction2->setMaximumWidth(150);
-	instruction2->setFixedSize(150,160);
+	instruction2->setFixedSize(150,100);
 
 	QgameLevel->setFixedSize(150,100);
 	
@@ -111,7 +128,9 @@ QVBoxLayout *MainWindow::createRightLayout()
 	rightLayout->addWidget(reStart);
 	rightLayout->addWidget(pause_resumeGame);
 	rightLayout->addWidget(exitGame);
-	rightLayout->addWidget(instruction1);
+	rightLayout->addWidget(scoreListLabel);
+	rightLayout->addWidget(scoreList);
+//	rightLayout->addWidget(instruction1);
 	rightLayout->addWidget(instruction2);	
 	//for(int i=0;i<14;i++)
 	//	rightLayout->addWidget(blank);
@@ -127,6 +146,7 @@ void MainWindow::startGame()
 		errMsg->setPlainText("Should enter user name");
 	else if(mainTimer == NULL){
 		errMsg->setPlainText("Game starts");
+		usrName->setDisabled(1);
 		//std::cout << "Start Game" << std::endl;
 		scoreNum = 0;
 		gameLevel = 0;
@@ -238,6 +258,7 @@ void MainWindow::PRGame()
 	if(dragon != NULL && num_hearts != 0){
 		//std::cout << "Pause or Resume Game" << std::endl;
 		if (timer1->isActive() == true){
+			dragon->disconnect(dragon,0,0,0);
 			errMsg->setPlainText("Pause");
 			dragon->keyReset();
 			mainTimer->stop();
@@ -249,6 +270,7 @@ void MainWindow::PRGame()
 			view->setFocus();
 		}
 		else{
+			connect(dragon, SIGNAL(myPressSignal()), this, SLOT(useMagic()));
 			errMsg->setPlainText("Resume");
 			//dragon->setFocus();
 			dragon->keyReset();
@@ -355,6 +377,11 @@ void MainWindow::cntScore()
 				errMsg->setPlainText("Game Over");
 				allTimerStop();
 				allTimerDelete();
+
+				usrName->setDisabled(0);
+
+				exportScore();
+				scoreDisplay();
 			}
 		}
 		else if(flag == 2){ // red_potion
@@ -404,7 +431,6 @@ void MainWindow::cntScore()
 		}
 	}
 
-
 	vector<int> temp;
 
 	for(int i=0;i<obstacles.size();i++){
@@ -418,19 +444,6 @@ void MainWindow::cntScore()
 		temp.pop_back();
 	}
 
-	/*
-	int index = 0;
-	while(obstacles.size()!= 0){
-		if(obstacles[index] == NULL){
-			obstacles[index] = obstacles.last();
-			obstacles.pop_back();
-		}
-		else
-			index ++;
-
-		if(index == obstacles.size())	break;
-	}*/
-	//view->setFocus();
 }
 
 void MainWindow::useMagic()
@@ -745,6 +758,132 @@ void MainWindow::obs_fireball()
 
 	obstacles.push_back(item);
 	//std::cout << "size of obstacle(vector): " << obstacles.size() << std::endl;
+}
+
+	
+
+void MainWindow::scoreDisplay()
+{
+	QTextStream in(&scoreFile);
+
+	while(!in.atEnd()){
+		QString chunk1;
+		QString ID;
+		QString chunk2;
+		double score;
+
+		in >> chunk1; // ID:
+		in >> ID; // actual ID
+		in >> chunk2; // Score:
+		in >> score; // actual Score
+
+		QScore tempScore;
+		
+		tempScore.ID = ID;
+		tempScore.score = score;
+
+		string ID_ = ID.toUtf8().constData();
+		string chunk1_ = chunk1.toUtf8().constData();
+		string chunk2_ = chunk2.toUtf8().constData();
+		
+		//std::cout << chunk1_ << ID_ << " " << chunk2_ << score << std::endl;
+	
+		QScores.push_back(tempScore);
+		in.readLine();
+	}
+
+	int score_size = QScores.size();
+
+	// order: high to low
+	for(int i=0;i<score_size-1;i++)
+	{
+		QScore max = QScores[i];
+		int idx = i;
+		for(int j=i+1;j<score_size;j++){
+			if(max.score < QScores[j].score){
+				max = QScores[j];
+				idx = j;
+			}
+		}
+		QScore temp = QScores[i];
+		QScores[i] = QScores[idx];
+		QScores[idx] = temp;
+	}
+
+	
+	//QStandardItemModel for saving solution
+	model = new QStandardItemModel(score_size,1,this);
+
+	for(int i=0;i<score_size;i++){
+		QString temp;
+
+		temp.setNum(QScores[i].score);
+		
+		QStandardItem* ID = new QStandardItem(QScores[i].ID);
+		QStandardItem* Score = new QStandardItem(temp);
+
+		model->setItem(i,0,ID);
+		model->setItem(i,1,Score);
+	}
+	scoreList->setModel(model);
+
+	scoreList->resizeRowsToContents(); // Adjust the row height
+	scoreList->resizeColumnsToContents();
+	scoreList->setColumnWidth(0,50);
+	scoreList->setColumnWidth(1,80);
+}
+
+void MainWindow::exportScore()
+{
+	QString tname = usrName->text();
+	//string name = tname.toUtf8().constData();
+	double tscore = score->value();
+	
+	QScore temp;
+	temp.ID = tname;
+	temp.score = tscore;
+
+	QScores.push_back(temp);
+
+	int score_size = QScores.size();
+	
+	// order: high to low
+	for(int i=0;i<score_size-1;i++)
+	{
+		QScore max = QScores[i];
+		int idx = i;
+		for(int j=i+1;j<score_size;j++){
+			if(max.score < QScores[j].score){
+				max = QScores[j];
+				idx = j;
+			}
+		}
+		QScore temp = QScores[i];
+		QScores[i] = QScores[idx];
+		QScores[idx] = temp;
+	}
+
+	// if size is larger than 10, discard the lowest one, which is the last one.
+	while(QScores.size() > 10){
+		QScores.pop_back();
+	}
+	
+	scoreFile.remove();
+
+	scoreFile.setFileName("score.txt");
+	if(!scoreFile.open(QIODevice::ReadWrite | QIODevice::Text))
+		std::cout << "Error occurs during writing score file" << std::endl;
+	
+	QTextStream out(&scoreFile);
+
+	score_size = QScores.size();
+	
+	for(int i=0;i<score_size;i++){
+		if(i == score_size-1)
+			out << "ID: " << QScores[i].ID << " Score: " << QScores[i].score;
+		else
+			out << "ID: " << QScores[i].ID << " Score: " << QScores[i].score << "\n";
+	}
 }
 
 void MainWindow::allTimerStop()

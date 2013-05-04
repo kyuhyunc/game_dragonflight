@@ -12,6 +12,8 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QList>
+#include <QTableView>
+#include <QStandardItemModel>
 #include <QLabel>
 #include <QGraphicsItem>
 #include <QTimer>
@@ -20,6 +22,9 @@
 #include <QPixmap>
 #include <QTextEdit>
 #include <QLineEdit>
+#include <QFile>
+#include <QTextStream>
+#include <QString>
 
 #include <stdlib.h>
 #include <iostream>
@@ -30,6 +35,9 @@
 #include <set>
 #include <cmath>
 #include <ctime>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 #include "obstacle.h"
 #include "dragon.h"
@@ -38,6 +46,12 @@
 #define WINDOW_MAX_Y 250
 
 using namespace std;
+
+struct QScore
+{
+	QString ID;
+	double score;
+};
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -74,7 +88,10 @@ public:
 	 *	@param type type of potion, either red or white
 	 */
 	void obs_potions(int type);
-    
+
+	void scoreDisplay();
+	void exportScore();
+
 private:
     QGraphicsScene *scene;
     QGraphicsView *view;
@@ -106,6 +123,7 @@ private:
 	QLabel *scoreLabel;
 	QLabel *usrNameLabel;
 	QLabel *gameLevelLabel;
+	QLabel *scoreListLabel;
 	
 	// vector for saving obstacles
 	QVector<Obstacle*> obstacles;
@@ -120,6 +138,14 @@ private:
 	QTimer *timer3; // for fireball
 	//QTimer *timer4; // for red potion
 	//QTimer *timer5; // for white potion
+
+
+	QStandardItemModel *model; // for saving solList
+	QTableView *scoreList; // QTableView for score display
+	//ifstream in_score; // output file 
+	QFile scoreFile; // output file 
+	//ofstream out_score; // output file 
+	QVector<QScore> QScores; // save scores from score.txt file
 		 
 protected:
 
