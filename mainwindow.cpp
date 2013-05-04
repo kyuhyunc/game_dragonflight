@@ -303,6 +303,9 @@ void MainWindow::cntScore()
 		timer1->start();
 		errMsg->setPlainText("Lv1: Rocks");
 		gameLevel = 1;
+
+		backGround->load("./pics/back_ground.jpg");
+		pixmapItem->setPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 	}
 	// after 15sec, start arrow
 	if(scoreNum == 500){
