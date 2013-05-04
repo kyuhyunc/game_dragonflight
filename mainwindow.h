@@ -96,6 +96,7 @@ private:
     QGraphicsScene *scene;
     QGraphicsView *view;
 	QPixmap *backGround;
+	QGraphicsPixmapItem* pixmapItem;
 
     QWidget *window;
 

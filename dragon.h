@@ -58,6 +58,7 @@ public:
 
 	/** function that will emit signal when space is pressed */
 	void magicPotion();
+	void pause();
 
 protected:
 	/** Inherited function for key press event */
@@ -79,6 +80,7 @@ private:
 
 signals:
 	void myPressSignal();
+	void myPressSignal2 ();
 	
 
 };

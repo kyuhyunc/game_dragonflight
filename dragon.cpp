@@ -6,6 +6,7 @@
 #define Key_Right 16777236
 #define Key_Down 16777237
 #define spacebar 32
+#define shift 16777248
 
 Dragon::Dragon(QLabel *nDragon, double nx, double ny, double w, double h) : QLabel(nDragon)
 {
@@ -69,6 +70,11 @@ void Dragon::magicPotion()
 	emit myPressSignal();
 }
 
+void Dragon::pause()
+{
+	emit myPressSignal2();
+}
+
 int Dragon::getX() {
     return x;
 }
@@ -105,6 +111,9 @@ void Dragon::keyPressEvent(QKeyEvent *event)
 			break;
 		case spacebar:
 			magicPotion();
+			break;
+		case shift:
+			pause();
 			break;
 	}
 }

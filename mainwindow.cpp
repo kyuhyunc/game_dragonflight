@@ -22,7 +22,8 @@ MainWindow::MainWindow()  {
 	
 	backGround = new QPixmap("./pics/back_ground.jpg");
 	
-	scene->addPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
+	pixmapItem = scene->addPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
+	//view->setScene(scene);
 
 	// topLayout for text input board	
 	topLayout = createTopLayout();
@@ -71,6 +72,7 @@ QHBoxLayout *MainWindow::createTopLayout()
 	score = new QLCDNumber(10);
 	// label for the box
 
+	usrName->setMaxLength(4);
 	usrName->setFixedSize(230,30);
 	score->setFixedSize(230,40);
 		
@@ -118,7 +120,7 @@ QVBoxLayout *MainWindow::createRightLayout()
 	scoreList->setDisabled(1);
 //	scoreList->verticalHeader()->hide();
 	
-	instruction2->setText(tr("Arrow key: moving\nSpace: cast magic\n\nRed potion: +1 heart\nWhite potion: magic"));
+	instruction2->setText(tr("Arrow key: moving\nSpace: cast magic\n\nRed potion: +1 heart\nWhite potion: magic\nLeft shift key: pause"));
 
 	instruction2->setFixedSize(150,100);
 
@@ -220,7 +222,7 @@ void MainWindow::startGame()
 		//timer5 = new QTimer(this);
 
 		mainTimer->setInterval(15);
-		timer1->setInterval(500);
+		timer1->setInterval(600);
 		timer2->setInterval(2000);
 		timer3->setInterval(3000);
 
@@ -236,6 +238,7 @@ void MainWindow::startGame()
 
 		// connect dragon
 		connect(dragon, SIGNAL(myPressSignal()), this, SLOT(useMagic()));
+		connect(dragon, SIGNAL(myPressSignal2()), this, SLOT(PRGame()));
 		
 		//dragon->setFocus();
 		//scene->setFocus();
@@ -258,7 +261,7 @@ void MainWindow::PRGame()
 	if(dragon != NULL && num_hearts != 0){
 		//std::cout << "Pause or Resume Game" << std::endl;
 		if (timer1->isActive() == true){
-			dragon->disconnect(dragon,0,0,0);
+			disconnect(dragon, SIGNAL(myPressSignal()), this, SLOT(useMagic()));
 			errMsg->setPlainText("Pause");
 			dragon->keyReset();
 			mainTimer->stop();
@@ -271,6 +274,7 @@ void MainWindow::PRGame()
 		}
 		else{
 			connect(dragon, SIGNAL(myPressSignal()), this, SLOT(useMagic()));
+			//connect(dragon, SIGNAL(myPressSignal2()), this, SLOT(PRGame()));
 			errMsg->setPlainText("Resume");
 			//dragon->setFocus();
 			dragon->keyReset();
@@ -306,33 +310,48 @@ void MainWindow::cntScore()
 		timer2->start();
 		errMsg->setPlainText("Lv2: Fast arrow");
 		gameLevel = 2;
+
+		backGround->load("./pics/back_ground2.jpg");
+		pixmapItem->setPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 	}
 	// after 30sec, start fireball
 	if(scoreNum == 1000){
 		timer3->start();
 		errMsg->setPlainText("Lv3: Big firball");
 		gameLevel = 3;
+
+		backGround->load("./pics/back_ground3.jpg");
+		pixmapItem->setPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 	}
 	if(scoreNum == 1500){
-		timer1->setInterval(450);
+		timer1->setInterval(500);
 		timer2->setInterval(1800);
 		timer3->setInterval(2800);
-		errMsg->setPlainText("Lv4: More obstacles are coming1");
+		errMsg->setPlainText("Lv4: More obstacles are coming");
 		gameLevel = 4;
+
+		backGround->load("./pics/back_ground4.jpg");
+		pixmapItem->setPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 	}
 	if(scoreNum == 2000){	
-		timer1->setInterval(380);
+		timer1->setInterval(400);
 		timer2->setInterval(1500);
 		timer3->setInterval(2500);
-		errMsg->setPlainText("Lv5: More obstacles are coming2");
+		errMsg->setPlainText("Lv5: More obstacles are coming and faster");
 		gameLevel = 5;
+
+		backGround->load("./pics/back_ground5.jpg");
+		pixmapItem->setPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 	}
 	if(scoreNum == 2500){	
-		timer1->setInterval(250);
+		timer1->setInterval(300);
 		timer2->setInterval(1300);
 		timer3->setInterval(2300);
-		errMsg->setPlainText("Lv6: Faster speed");
+		errMsg->setPlainText("Lv6: Hell");
 		gameLevel = 6;
+
+		backGround->load("./pics/back_ground6.jpg");
+		pixmapItem->setPixmap(backGround->scaled(WINDOW_MAX_X*2.49,WINDOW_MAX_Y*2.49,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 	}
 
 	QgameLevel->display(gameLevel);
@@ -514,6 +533,9 @@ void MainWindow::obs_rock()
 	int vy = 1+rand()%1;
 
 	if(gameLevel == 6){
+		vx+=2; vy+=2;
+	}
+	else if(gameLevel == 5){
 		vx++; vy++;
 	}
 
@@ -592,9 +614,12 @@ void MainWindow::obs_arrow()
 	int vy = 2+rand()%3;
 
 	if(gameLevel == 6){
+		vx+=2; vy+=2;
+	}
+	else if(gameLevel == 5){
 		vx++; vy++;
 	}
-
+	
 	int temp;
 	int direction = rand() % 4;
 	int direction2 = rand() % 2;
@@ -692,6 +717,9 @@ void MainWindow::obs_fireball()
 	int vy = 2+rand()%2;
 	
 	if(gameLevel == 6){
+		vx+=2; vy+=2;
+	}
+	else if(gameLevel == 5){
 		vx++; vy++;
 	}
 
@@ -829,8 +857,8 @@ void MainWindow::scoreDisplay()
 
 	scoreList->resizeRowsToContents(); // Adjust the row height
 	scoreList->resizeColumnsToContents();
-	scoreList->setColumnWidth(0,50);
-	scoreList->setColumnWidth(1,80);
+	scoreList->setColumnWidth(0,45);
+	scoreList->setColumnWidth(1,87);
 }
 
 void MainWindow::exportScore()
