@@ -2,8 +2,9 @@ ID: kyu Score: 5121
 ID: gg Score: 3724
 ID: ggg Score: 942
 ID: bbbb Score: 747
+ID: dddd Score: 456
+ID: dddd Score: 420
+ID: ggg Score: 384
+ID: dddd Score: 371
 ID: bbb Score: 271
 ID: aggg Score: 270
-ID: kkk Score: 258
-ID: aaaa Score: 257
-ID: sss Score: 249

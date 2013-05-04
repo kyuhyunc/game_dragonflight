@@ -58,6 +58,8 @@ public:
 
 	/** function that will emit signal when space is pressed */
 	void magicPotion();
+
+	/** function that will emit signal when left shift key is pressed */
 	void pause();
 
 protected:

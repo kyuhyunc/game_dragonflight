@@ -54,8 +54,7 @@ MainWindow::MainWindow()  {
 	// connecting quit button to terminate the program
 	connect(exitGame, SIGNAL(clicked()), qApp, SLOT(quit()));	
 
-	//setFocusPolicy(Qt::StrongFocus);
-
+	// display score right after window comes up
 	scoreFile.setFileName("score.txt");
 	if(!scoreFile.open(QIODevice::ReadWrite | QIODevice::Text))
 		std::cout << "Error occurs during reading score file" << std::endl;
@@ -396,10 +395,14 @@ void MainWindow::cntScore()
 				errMsg->setPlainText("Game Over");
 				allTimerStop();
 				allTimerDelete();
-
+				
+				// make user be able to enter new ID when game is over
 				usrName->setDisabled(0);
-
+				
+				// export new score to score.txt file
 				exportScore();
+
+				// update high scores
 				scoreDisplay();
 			}
 		}
@@ -793,13 +796,14 @@ void MainWindow::obs_fireball()
 void MainWindow::scoreDisplay()
 {
 	QTextStream in(&scoreFile);
-
+	
 	while(!in.atEnd()){
 		QString chunk1;
 		QString ID;
 		QString chunk2;
 		double score;
 
+		// parsing ID and score to proper variables
 		in >> chunk1; // ID:
 		in >> ID; // actual ID
 		in >> chunk2; // Score:
@@ -821,6 +825,7 @@ void MainWindow::scoreDisplay()
 	}
 
 	int score_size = QScores.size();
+	//std::cout << score_size << std::endl;
 
 	// order: high to low
 	for(int i=0;i<score_size-1;i++)
@@ -896,6 +901,7 @@ void MainWindow::exportScore()
 		QScores.pop_back();
 	}
 	
+	// reset score.txt
 	scoreFile.remove();
 
 	scoreFile.setFileName("score.txt");
@@ -912,6 +918,7 @@ void MainWindow::exportScore()
 		else
 			out << "ID: " << QScores[i].ID << " Score: " << QScores[i].score << "\n";
 	}
+
 }
 
 void MainWindow::allTimerStop()

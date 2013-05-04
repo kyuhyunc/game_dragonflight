@@ -89,7 +89,10 @@ public:
 	 */
 	void obs_potions(int type);
 
+	/** Will display high scores in the right box*/
 	void scoreDisplay();
+
+	/** Will export scores in the box to score.txt file*/
 	void exportScore();
 
 private:
