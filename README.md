@@ -2,13 +2,11 @@
 ### Student Information
   + Name: Kyu Hyun Chang
   + USC Email: kyuhyunc@usc.edu
-  + USC ID: 5668698400
 
 ### Game Information
   + Game Name: Dragon Flight
   + Game Description: Control flying dragon and avoid obstacles coming toward
   + [Game Design Doc](GameDesignDoc.md)
-
 
 ### Compile & Run Instructions
 The grader should use the following procedure to compile and run the code:
@@ -21,7 +19,7 @@ make
 doxygen -g config.txt
 doxygen config.txt
 #Command to run
-./game_kyuhyunc
+./game_dragonflight
 (the name of output file can be differ by the name of directory)
 ```
 
