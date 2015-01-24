@@ -45,7 +45,7 @@ void Dragon::keyReset()
 }
 
 void Dragon::move( int windowMaxX, int windowMaxY) {
-	int speed = 2;	
+	int speed = 4;	
 
 	if(up_key == true){
 		if(y-speed > 0)	y-=speed; //y--; 

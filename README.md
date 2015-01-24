@@ -20,7 +20,9 @@ doxygen -g config.txt
 doxygen config.txt
 #Command to run
 ./game_dragonflight
-(the name of output file can be differ by the name of directory)
+*side note1: the name of output file can be differ by the name of directory
+*side note2: the executable file may not be in the current directory depending which OS you use.
+(for the mac users, it might be under "public_dragonflight.app/Contents/MacOS/") 
 ```
 
 ### Screenshots

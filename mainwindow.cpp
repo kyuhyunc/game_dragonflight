@@ -204,7 +204,7 @@ void MainWindow::startGame()
 		for(int i=0;i<num_hearts;i++){
 			QLabel *heart = new QLabel;
 			heart->move(10+30*i,10);
-			heart->setFixedSize(heartSize,heartSize);
+			heart->setFixedSize(heartSize,heartSize+20);
 			heart->setPixmap(heart_.scaled(heartSize,heartSize,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 			Qhearts.push_back(heart);
 			heart->setAttribute(Qt::WA_TranslucentBackground);
@@ -319,7 +319,7 @@ void MainWindow::cntScore()
 	// after 30sec, start fireball
 	if(scoreNum == 1000){
 		timer3->start();
-		errMsg->setPlainText("Lv3: Big firball");
+		errMsg->setPlainText("Lv3: Big fireball");
 		gameLevel = 3;
 
 		backGround->load("./pics/back_ground3.jpg");
@@ -329,7 +329,7 @@ void MainWindow::cntScore()
 		timer1->setInterval(500);
 		timer2->setInterval(1800);
 		timer3->setInterval(2800);
-		errMsg->setPlainText("Lv4: More obstacles are coming");
+		errMsg->setPlainText("Lv4: More obstacles will come");
 		gameLevel = 4;
 
 		backGround->load("./pics/back_ground4.jpg");
@@ -339,7 +339,7 @@ void MainWindow::cntScore()
 		timer1->setInterval(400);
 		timer2->setInterval(1500);
 		timer3->setInterval(2500);
-		errMsg->setPlainText("Lv5: More obstacles are coming and faster");
+		errMsg->setPlainText("Lv5: More obstacles will come faster");
 		gameLevel = 5;
 
 		backGround->load("./pics/back_ground5.jpg");
@@ -358,7 +358,8 @@ void MainWindow::cntScore()
 
 	QgameLevel->display(gameLevel);
 
-	srand(scoreNum);
+	//srand(scoreNum);
+	srand((unsigned) time(NULL));
 	int potionNumber = rand() % 10;
 
 	// potions
@@ -416,7 +417,7 @@ void MainWindow::cntScore()
 				int heartSize = 25;
 				QLabel *heart = new QLabel;
 				heart->move(10+30*num_hearts,10);
-				heart->setFixedSize(heartSize,heartSize);
+				heart->setFixedSize(heartSize,heartSize+20);
 				heart->setPixmap(heart_.scaled(heartSize,heartSize,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 				heart->setAttribute(Qt::WA_TranslucentBackground);
 				
@@ -439,7 +440,7 @@ void MainWindow::cntScore()
 				int potionSize = 35;
 				QLabel *potion = new QLabel;
 				potion->move(5+30*(magic_potions.size()),10+potionSize);
-				potion->setFixedSize(potionSize,potionSize);
+				potion->setFixedSize(potionSize,potionSize+20);
 				potion->setPixmap(potion_.scaled(potionSize,potionSize,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
 				potion->setAttribute(Qt::WA_TranslucentBackground);
 
@@ -500,7 +501,7 @@ void MainWindow::obs_potions(int type)
 	int RpotionSize = 77;
 	int WpotionSize = 78;
 	int vx = 0;
-	int vy = 2;
+	int vy = 4;
 	int temp;
 
 	srand(scoreNum);
@@ -509,7 +510,7 @@ void MainWindow::obs_potions(int type)
 		if(temp < 600 && temp > 100)	break;
 	}while(1);
 
-	if(type == 2 || type == 5 || type == 8){ // magic potion
+	if(type == 1 || type == 2 || type == 5 || type == 8){ // magic potion
 		potion->move(temp, 0);
 		potion->setFixedSize(WpotionSize,WpotionSize);
 		potion->setPixmap(white_potion_.scaled(WpotionSize,WpotionSize,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
@@ -535,8 +536,8 @@ void MainWindow::obs_rock()
 
 	srand(scoreNum);
 	int size = 40;
-	int vx = 1+rand()%1;
-	int vy = 1+rand()%1;
+	int vx = 3+rand()%1;
+	int vy = 3+rand()%1;
 
 	if(gameLevel == 6){
 		vx+=2; vy+=2;
@@ -616,8 +617,8 @@ void MainWindow::obs_arrow()
 	srand(scoreNum+1);
 	int width = 80;
 	int height = 30;
-	int vx = 2+rand()%3;
-	int vy = 2+rand()%3;
+	int vx = 5+rand()%3;
+	int vy = 5+rand()%3;
 
 	if(gameLevel == 6){
 		vx+=2; vy+=2;
@@ -719,8 +720,8 @@ void MainWindow::obs_fireball()
 
 	srand(scoreNum+2);
 	int size = 110;
-	int vx = 2+rand()%2;
-	int vy = 2+rand()%2;
+	int vx = 4+rand()%2;
+	int vy = 4+rand()%2;
 	
 	if(gameLevel == 6){
 		vx+=2; vy+=2;
